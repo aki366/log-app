@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Careerlog, Language, Technology, Category
+from .models import Careerlog, Category, Language, Technology
 
 class CareerlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'execution_date', 'timestamp')  # リストで表示するフィールド
@@ -19,6 +19,6 @@ class CareerlogAdmin(admin.ModelAdmin):
         return super().formfield_for_manytomany(db_field, request, **kwargs)
 
 admin.site.register(Careerlog, CareerlogAdmin)
+admin.site.register(Category)
 admin.site.register(Language)
 admin.site.register(Technology)
-admin.site.register(Category)
