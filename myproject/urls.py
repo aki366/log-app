@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp.views import CareerlogListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('careerlogs/', CareerlogListView.as_view(), name='careerlog-list'),
 ]

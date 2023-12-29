@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Careerlog
 
-# Create your views here.
+class CareerlogListView(ListView):
+    model = Careerlog
+    template_name = 'careerlog_list.html'
+    context_object_name = 'careerlogs'
