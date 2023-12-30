@@ -1,6 +1,6 @@
 # CareerLog
 
-ディレクトリ構成
+## ディレクトリ構成
 ```
 career-log/
 │
@@ -23,10 +23,10 @@ career-log/
 └── README.md
 ```
 
-### 管理画面
+## 管理画面
 http://127.0.0.1:8000/admin/
 
-### DB設計
+## DB設計
 
 **初段リリースの方針**
 
@@ -41,7 +41,9 @@ http://127.0.0.1:8000/admin/
 - 高度な機能
   - PostgreSQLやMySQLなどの他のDBMSには、パーティショニング、レプリケーション、フルテキスト検索などの高度な機能がありますが、SQLiteではこれらはサポートされていない
   
-### 開発
+## 開発
+
+### 依存関係の更新
 大きな変更や新しい依存関係がある場合は下記のコマンドを実行して依存関係の更新を行なってから、updateして下さい。
 ```
 $ pip install -r requirements.txt
@@ -49,6 +51,7 @@ $ pip install -r requirements.txt
 $ zappa update dev
 ```
 
+### マイグレーション
 モデルの変更があった場合は、マイグレーションファイルを作成してからマイグレーションを実行して下さい。
 ```
 $ python manage.py makemigrations
@@ -56,6 +59,7 @@ $ python manage.py makemigrations
 $ python manage.py migrate
 ```
 
+### 仮想環境の起動停止
 仮想環境をアクティブにする
 ```
 $ source venv/bin/activate
