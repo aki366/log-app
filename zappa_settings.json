@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "aws_region": "ap-northeast-1",
+        "django_settings": "myproject.settings",
+        "profile_name": "default",
+        "project_name": "career-log",
+        "runtime": "python3.9",
+        "s3_bucket": "career-log-lambda-deployment-zip"
+    }
+}
