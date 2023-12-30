@@ -69,3 +69,8 @@ $ source venv/bin/activate
 ```
 $ deactivate
 ```
+
+### front
+
+- CSS、JavaScript、画像などを更新した際は、S3へアップロードすること
+- HTMLファイルは一般的に静的ファイルとは見なされず、Djangoのテンプレートシステムを通じて動的にレンダリングされるので、Lambdaにアップロードするで問題ない
