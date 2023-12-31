@@ -51,6 +51,12 @@ $ pip install -r requirements.txt
 $ zappa update dev
 ```
 
+インストールされた全てのパッケージが含まれる requirements.txt ファイルを作成
+```
+$ source venv/bin/activate  # Activate your virtual environment
+$ pip freeze > requirements.txt  # Generate requirements.txt
+```
+
 ### マイグレーション
 モデルの変更があった場合は、マイグレーションファイルを作成してからマイグレーションを実行して下さい。
 ```
