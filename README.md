@@ -80,3 +80,10 @@ $ deactivate
 
 - CSS、JavaScript、画像などを更新した際は、S3へアップロードすること
 - HTMLファイルは一般的に静的ファイルとは見なされず、Djangoのテンプレートシステムを通じて動的にレンダリングされるので、Lambdaにアップロードするで問題ない
+
+### 開発過程
+
+まずは、S3を使って簡単な静的なビューを表示した
+- http://career-log.s3-website-ap-northeast-1.amazonaws.com/
+- S3：https://s3.console.aws.amazon.com/s3/buckets/career-log?region=ap-northeast-1&bucketType=general&tab=properties
+
