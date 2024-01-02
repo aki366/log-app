@@ -87,3 +87,15 @@ $ deactivate
 - http://career-log.s3-website-ap-northeast-1.amazonaws.com/
 - S3：https://s3.console.aws.amazon.com/s3/buckets/career-log?region=ap-northeast-1&bucketType=general&tab=properties
 
+LambdaからEFSのファイルを編集しようとした際に権限がないと指摘されたので、権限を変更するために下記の設定を行った
+- EFSにアクセスするためのEC2インスタンスをEFSと同じVPN何に作成
+- VPN内のEC2インスタンスがSSHで外部と通信できるようにGateWayを設置
+- EC２が外部と通信するために、パブリックIPアドレスを作成して設定
+- VPCでGateWayを紐づけるため、Route tablesから紐付け
+上記の設定を行ってから、EC2へSSH接続をした
+```
+# ubuntuにしたらデフォルトnameはubuntuになる
+# 52.193.86.226は作成したバプリックIP
+$ ssh -i ./dambo3987fnos.pem ubuntu@52.193.86.226
+
+```
