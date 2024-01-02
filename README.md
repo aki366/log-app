@@ -94,8 +94,41 @@ LambdaからEFSのファイルを編集しようとした際に権限がない�
 - VPCでGateWayを紐づけるため、Route tablesから紐付け
 上記の設定を行ってから、EC2へSSH接続をした
 ```
-# ubuntuにしたらデフォルトnameはubuntuになる
-# 52.193.86.226は作成したバプリックIP
-$ ssh -i ./dambo3987fnos.pem ubuntu@52.193.86.226
+# EFSにアクセスするだけのEC2インスタンスあので、OSは相性の良いAWSにした
+# 57.181.10.163は作成したバプリックIP
+$ ssh -i ./dambo3987fnos.pem ec2-user@57.181.10.163
 
+# efsの操作に必要なパッケージのインストール
+$ sudo yum install -y amazon-efs-utils
+$ rpm -q amazon-efs-utils
+amazon-efs-utils-1.35.0-1.amzn2023.noarch
+
+# botocoreをインストールするために、pip3をインストール
+$ sudo yum install python3-pip
+
+# botocoreのインストール
+$ sudo pip3 install botocore
+
+# AWSの資格情報を設定
+$ aws configure
+AWS Access Key ID [None]:
+AWS Secret Access Key [None]:
+Default region name [None]: ap-norheast-1
+Default output format [None]: json
+
+# マウントの設定
+# EFSマウントターゲットのIPアドレス: 10.0.1.250
+# EFS: fs-01da562a3e9cce07d
+$ sudo mount -t efs -o tls,mounttargetip=10.0.1.250 fs-01da562a3e9cce07d /mnt/efs
+
+# マウントされたか確認
+$ df -hT | grep efs
+127.0.0.1:/    nfs4      8.0E     0  8.0E   0% /mnt/efs
+
+# ディレクトリ作成
+$ sudo mkdir -p /mnt/efs
+
+# 権限変更
+$ sudo chmod 777 /mnt
+$ sudo chmod 777 /mnt/efs
 ```
