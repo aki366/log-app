@@ -92,6 +92,7 @@ LambdaからEFSのファイルを編集しようとした際に権限がない�
 - VPN内のEC2インスタンスがSSHで外部と通信できるようにGateWayを設置
 - EC２が外部と通信するために、パブリックIPアドレスを作成して設定
 - VPCでGateWayを紐づけるため、Route tablesから紐付け
+- EC2用のセキュリティグループを作成
 上記の設定を行ってから、EC2へSSH接続をした
 ```
 # EFSにアクセスするだけのEC2インスタンスあので、OSは相性の良いAWSにした
@@ -132,3 +133,11 @@ $ sudo mkdir -p /mnt/efs
 $ sudo chmod 777 /mnt
 $ sudo chmod 777 /mnt/efs
 ```
+
+EFSにアクセスしなくなったら、課金対策としEC2を使用するために作成したリソースを削除する
+- EC2関連
+  - インスタンスの停止
+  - パブリックIPの削除
+- VPC関連
+  - Gatewayt(career-log-ec2-gateway)削除
+  - ルートテーブルの設定削除
