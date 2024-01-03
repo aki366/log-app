@@ -1,4 +1,4 @@
-# [CareerLog](http://career-log.s3-website-ap-northeast-1.amazonaws.com/)
+# [CareerLog](http://careerlog.net/)
 
 ## ディレクトリ構成
 ```
