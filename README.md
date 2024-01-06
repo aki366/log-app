@@ -23,7 +23,7 @@ career-log/
 └── README.md
 ```
 
-### 
+### 開発環境
 - 一覧画面: http://127.0.0.1:8000/careerlogs/
 - 管理画面: http://127.0.0.1:8000/admin/
 
