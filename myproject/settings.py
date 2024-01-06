@@ -74,10 +74,16 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+import os
+
+# 環境変数からDBパスを取得（デフォルトはローカルのDBパス）
+# 本番環境は環境変数で、DATABASE_PATH = `/mnt/myefs/db.sqlite3`を取得する
+DATABASE_PATH = os.getenv('DATABASE_PATH', BASE_DIR / 'db.sqlite3')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DATABASE_PATH,
     }
 }
 
