@@ -23,8 +23,9 @@ career-log/
 └── README.md
 ```
 
-### 管理画面
-http://127.0.0.1:8000/admin/
+### 
+- 一覧画面: http://127.0.0.1:8000/careerlogs/
+- 管理画面: http://127.0.0.1:8000/admin/
 
 ### DB設計
 
