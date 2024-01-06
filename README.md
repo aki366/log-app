@@ -24,6 +24,19 @@ career-log/
 ```
 
 ### 開発環境
+- ブラウザで確認するには、Anacondaを起動しておくこと
+- 仮想環境をアクティブにする
+  ```
+  $ source venv/bin/activate
+  (venv) (career-log)
+
+  $ python manage.py runserver
+  ```
+- 仮想環境を非アクティブにする
+  ```
+  $ deactivate
+  ```
+
 - 一覧画面: http://127.0.0.1:8000/careerlogs/
 - 管理画面: http://127.0.0.1:8000/admin/
 
